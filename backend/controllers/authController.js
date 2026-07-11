@@ -34,6 +34,9 @@ export const registerUser = async (req, res) => {
         email: user.email,
         displayName: user.displayName,
         profilePicture: user.profilePicture,
+        bio: user.bio,
+        theme: user.theme,
+        wallpaper: user.wallpaper,
         privacy: user.privacy,
         token: generateToken(user._id),
       });
@@ -59,7 +62,9 @@ export const loginUser = async (req, res) => {
         email: user.email,
         displayName: user.displayName,
         profilePicture: user.profilePicture,
+        bio: user.bio,
         theme: user.theme,
+        wallpaper: user.wallpaper,
         privacy: user.privacy,
         token: generateToken(user._id),
       });

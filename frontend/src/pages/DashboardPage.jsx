@@ -1102,7 +1102,12 @@ function DashboardPage({ viewMode = 'all' }) {
 
                     <div className="border-t border-outline-variant/10"></div>
                     <button onClick={() => {
-                      localStorage.removeItem('userInfo')
+                      localStorage.removeItem('nova_userInfo')
+                      localStorage.removeItem('nova_theme')
+                      localStorage.removeItem('nova_displayName')
+                      localStorage.removeItem('nova_username')
+                      localStorage.removeItem('nova_bio')
+                      localStorage.removeItem('nova_email')
                       setUser(null)
                       navigate('/')
                     }} className="w-full px-4 py-3 text-left hover:bg-error-container hover:text-on-error-container text-error text-sm flex items-center gap-3 transition-colors">
