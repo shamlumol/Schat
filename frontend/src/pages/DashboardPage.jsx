@@ -1519,8 +1519,6 @@ function DashboardPage({ viewMode = 'all' }) {
                       {reactionHoverId === message._id && !message.isDeletedForEveryone && (
                         <div 
                           className={`reaction-menu-container absolute bottom-full mb-2 bg-surface/95 backdrop-blur-sm border border-outline-variant/20 shadow-2xl rounded-full px-3 py-2 flex gap-3 animate-fade-in-up z-50 ${isOutgoing ? 'right-0 origin-bottom-right' : 'left-0 origin-bottom-left'}`}
-                          onTouchStart={(e) => e.stopPropagation()}
-                          onPointerDown={(e) => e.stopPropagation()}
                         >
                           {reactionOptions.map(opt => {
                             const isReacted = message.reactions?.some(r => r.userId === user._id && r.emoji === opt.emoji);
@@ -1528,7 +1526,6 @@ function DashboardPage({ viewMode = 'all' }) {
                               <button 
                                 key={opt.emoji} 
                                 onClick={(e) => { e.stopPropagation(); handleReaction(message._id, opt.emoji); setReactionHoverId(null); }}
-                                onTouchStart={(e) => { e.preventDefault(); e.stopPropagation(); handleReaction(message._id, opt.emoji); setReactionHoverId(null); }}
                                 className={`hover:scale-[1.4] transition-transform w-6 h-6 flex items-center justify-center rounded-full ${isReacted ? 'bg-primary/20 scale-[1.2]' : ''}`}
                               >
                                 <img src={opt.img} alt={opt.emoji} className="w-full h-full object-contain" />
@@ -1538,7 +1535,6 @@ function DashboardPage({ viewMode = 'all' }) {
                           <div className="w-px h-6 bg-outline-variant/30 mx-1"></div>
                           <button 
                             onClick={(e) => { e.stopPropagation(); setMsgActionMenu({ visible: true, message, x: isOutgoing ? window.innerWidth - 150 : 50, y: e.clientY || (e.touches ? e.touches[0].clientY : 0) }); setReactionHoverId(null); }} 
-                            onTouchStart={(e) => { e.preventDefault(); e.stopPropagation(); setMsgActionMenu({ visible: true, message, x: isOutgoing ? window.innerWidth - 150 : 50, y: e.touches ? e.touches[0].clientY : 0 }); setReactionHoverId(null); }} 
                             className="w-6 h-6 flex items-center justify-center text-on-surface-variant hover:text-on-surface"
                           >
                             <span className="material-symbols-outlined text-[18px]">more_vert</span>
