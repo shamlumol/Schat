@@ -41,8 +41,8 @@ const renderMessageWith3DEmojis = (text, query = '', messageId = null, searchRes
               alt={part} 
               className="w-[2.5em] h-[2.5em] mx-[2px] align-middle object-contain inline-block drop-shadow-md hover:scale-110 transition-transform"
               onError={(e) => {
-                e.target.style.display = 'none';
-                if (e.target.nextSibling) e.target.nextSibling.style.display = 'inline';
+                e.target.parentElement.style.display = 'none';
+                if (e.target.parentElement.nextSibling) e.target.parentElement.nextSibling.style.display = 'inline';
               }}
             />
           </picture>
