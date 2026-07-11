@@ -1046,7 +1046,7 @@ function DashboardPage({ viewMode = 'all' }) {
         
         {/* CONVERSATION LIST (Left Column) */}
         <aside 
-          className={`h-full flex flex-col bg-surface border-r border-outline-variant/10 flex-shrink-0 ${
+          className={`h-full flex flex-col bg-surface border-r border-outline-variant/10 flex-shrink-0 w-full md:w-auto ${
             isChatOpenMobile ? 'hidden md:flex' : 'flex'
           }`}
           style={{ width: isChatOpenMobile || window.innerWidth < 768 ? undefined : `${sidebarWidth}px` }}
@@ -1065,7 +1065,7 @@ function DashboardPage({ viewMode = 'all' }) {
               <div className="flex gap-2 relative" ref={navMenuRef}>
                 <button 
                   onClick={() => navigate('/calls')}
-                  className="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-sm"
+                  className="hidden md:flex w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-sm"
                   title="Call History"
                 >
                   <span className="material-symbols-outlined text-[18px]">call</span>
@@ -1828,10 +1828,10 @@ function DashboardPage({ viewMode = 'all' }) {
             <span className="material-symbols-outlined fill">chat</span>
             <span className="text-[10px] font-semibold">Messages</span>
           </Link>
-          <button className="flex flex-col items-center gap-1 text-on-surface-variant">
-            <span className="material-symbols-outlined">group</span>
-            <span className="text-[10px]">Contacts</span>
-          </button>
+          <Link to="/calls" className="flex flex-col items-center gap-1 text-on-surface-variant animate-fade-in-up">
+            <span className="material-symbols-outlined">call</span>
+            <span className="text-[10px]">Calls</span>
+          </Link>
           <Link to="/settings" className="flex flex-col items-center gap-1 text-on-surface-variant animate-fade-in-up">
             <span className="material-symbols-outlined">settings</span>
             <span className="text-[10px]">Settings</span>
