@@ -8,8 +8,8 @@ export const getUsers = async (req, res) => {
     const keyword = req.query.search
       ? {
           $or: [
-            { username: { $regex: req.query.search, $options: 'i' } },
-            { displayName: { $regex: req.query.search, $options: 'i' } },
+            { username: { $regex: `^${req.query.search}$`, $options: 'i' } },
+            { displayName: { $regex: `^${req.query.search}$`, $options: 'i' } },
           ],
         }
       : {};
