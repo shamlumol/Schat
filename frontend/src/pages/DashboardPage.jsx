@@ -1413,8 +1413,8 @@ function DashboardPage({ viewMode = 'all' }) {
                             <div 
                               className={
                                 (!message.content && !message.replyTo && !message.isForwarded && (message.messageType === 'image' || message.messageType === 'sticker' || message.messageType === 'voice'))
-                                  ? 'inline-block text-left relative'
-                                  : `p-3 rounded-2xl shadow-sm inline-block text-left relative ${isOutgoing ? 'bg-primary-container text-on-primary-container rounded-br-sm shadow-[0_4px_12px_rgba(0,102,255,0.15)]' : 'bg-surface-container-highest text-on-surface rounded-bl-sm'}`
+                                  ? 'inline-block text-left relative cursor-pointer'
+                                  : `p-3 rounded-2xl shadow-sm inline-block text-left relative cursor-pointer ${isOutgoing ? 'bg-primary-container text-on-primary-container rounded-br-sm shadow-[0_4px_12px_rgba(0,102,255,0.15)]' : 'bg-surface-container-highest text-on-surface rounded-bl-sm'}`
                               }
                               onClick={() => setReactionHoverId(reactionHoverId === message._id ? null : message._id)}
                               onDoubleClick={(e) => { e.stopPropagation(); setMsgActionMenu({ visible: true, message, x: e.clientX || window.innerWidth/2, y: e.clientY || window.innerHeight/2 }); }}
