@@ -147,7 +147,7 @@ function LoginPage() {
                       className="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-full py-3 pl-12 pr-4 text-on-surface text-sm placeholder:text-outline-variant/60 focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all outline-none shadow-sm"
                       id="name"
                       name="name"
-                      placeholder="Antigravity"
+                      placeholder="Your Name"
                       required
                       type="text"
                       value={name}
@@ -167,7 +167,7 @@ function LoginPage() {
                     className="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-full py-3 pl-12 pr-4 text-on-surface text-sm placeholder:text-outline-variant/60 focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all outline-none shadow-sm"
                     id="email"
                     name="email"
-                    placeholder="antigravity@gmail.com"
+                    placeholder="name@gmail.com"
                     required
                     type="email"
                     value={email}
@@ -246,7 +246,7 @@ function LoginPage() {
         </div>
       </main>
 
-      <GenericModal 
+      <GenericModal
         isOpen={forgotPasswordModalOpen}
         onClose={() => setForgotPasswordModalOpen(false)}
         onConfirm={handleForgotPassword}
