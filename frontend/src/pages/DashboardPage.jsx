@@ -1351,28 +1351,15 @@ function DashboardPage({ viewMode = 'all' }) {
                     setMsgActionMenu({ visible: true, message, x: e.clientX, y: e.clientY });
                   };
 
-                  let longPressTimer;
                   let initialTouch = null;
                   const onTouchStart = (e) => {
                     initialTouch = { x: e.touches[0].clientX, y: e.touches[0].clientY };
                     handleTouchStartMsg(e, message._id);
-                    longPressTimer = setTimeout(() => {
-                      setMsgActionMenu({ visible: true, message, x: e.touches[0].clientX, y: e.touches[0].clientY });
-                      setSwipeState({ id: null, startX: 0, currentX: 0 }); // Cancel swipe
-                    }, 400);
                   };
                   const onTouchMove = (e) => {
-                    if (initialTouch) {
-                      const moveX = Math.abs(e.touches[0].clientX - initialTouch.x);
-                      const moveY = Math.abs(e.touches[0].clientY - initialTouch.y);
-                      if (moveX > 10 || moveY > 10) {
-                        clearTimeout(longPressTimer);
-                      }
-                    }
                     handleTouchMoveMsg(e, message._id);
                   };
                   const onTouchEnd = (e) => {
-                    clearTimeout(longPressTimer);
                     handleTouchEndMsg(e, message);
                   };
 
