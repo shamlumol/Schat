@@ -79,8 +79,9 @@ export const socketHandlers = (io) => {
     socket.on('message_reaction', (updatedMsg) => {
       if (!updatedMsg.chat || !updatedMsg.chat.participants) return;
       updatedMsg.chat.participants.forEach((participant) => {
-        if (participant._id === socket.userId) return; // don't send back to self
-        socket.in(participant._id).emit('message_status_update', updatedMsg);
+        const participantId = participant._id ? participant._id.toString() : participant.toString();
+        if (participantId === socket.userId) return; // don't send back to self
+        socket.in(participantId).emit('message_status_update', updatedMsg);
       });
     });
 

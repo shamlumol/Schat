@@ -1680,7 +1680,7 @@ function DashboardPage({ viewMode = 'all' }) {
                         <button type="button" onClick={() => fileInputRef.current?.click()} className="w-9 h-9 rounded-full hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant transition-colors" title="Attach file">
                           <span className="material-symbols-outlined text-[20px]">attach_file</span>
                         </button>
-                        <button type="button" onClick={() => setMediaPickerMode(mediaPickerMode === 'emoji' ? null : 'emoji')} className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${mediaPickerMode === 'emoji' ? 'bg-primary/20 text-primary' : 'hover:bg-surface-container-high text-on-surface-variant'}`} title="Insert emoji">
+                        <button type="button" onClick={() => setMediaPickerMode(mediaPickerMode === 'emoji' ? null : 'emoji')} className={`hidden md:flex w-9 h-9 rounded-full items-center justify-center transition-colors ${mediaPickerMode === 'emoji' ? 'bg-primary/20 text-primary' : 'hover:bg-surface-container-high text-on-surface-variant'}`} title="Insert emoji">
                           <span className="material-symbols-outlined text-[20px]">
                             {mediaPickerMode === 'emoji' ? 'keyboard' : 'mood'}
                           </span>

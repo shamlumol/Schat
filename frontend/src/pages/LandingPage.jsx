@@ -7,7 +7,7 @@ function LandingPage() {
   useEffect(() => {
     // Show the minimal loading animation for 1.5 seconds, then redirect
     const timer = setTimeout(() => {
-      const userInfo = localStorage.getItem('userInfo')
+      const userInfo = localStorage.getItem('nova_userInfo')
       if (userInfo) {
         navigate('/dashboard')
       } else {

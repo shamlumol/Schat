@@ -18,6 +18,11 @@ function LoginPage() {
   const cardRef = useRef(null)
 
   useEffect(() => {
+    const userInfo = localStorage.getItem('nova_userInfo')
+    if (userInfo) {
+      navigate('/dashboard')
+    }
+
     const ctx = gsap.context(() => {
       gsap.from('.login-container', {
         y: 30,
