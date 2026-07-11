@@ -309,10 +309,7 @@ const ChatInfoModal = ({ isOpen, onClose, chat, user, setPreviewMediaUrl, messag
                 <p className="text-sm text-on-surface whitespace-pre-wrap">{fullUser?.bio || "Hey there! I'm using Schat."}</p>
               </div>
 
-              <div className="w-full bg-surface-container-low rounded-xl p-4 border border-outline-variant/10 mt-4 text-center">
-                <span className="block text-[11px] font-bold text-on-surface-variant uppercase tracking-wider mb-2">Email</span>
-                <p className="text-sm text-on-surface">{fullUser?.email}</p>
-              </div>
+
             </div>
           </div>
         )}

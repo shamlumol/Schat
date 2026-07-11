@@ -1771,7 +1771,7 @@ function DashboardPage({ viewMode = 'all' }) {
                   )}
                 </div>
                 <h2 className="text-xl font-bold mb-1">{selectedChat.isGroupChat ? selectedChat.groupName : getSender(user, selectedChat.participants)}</h2>
-                <p className="text-sm text-on-surface-variant">{selectedChat.isGroupChat ? 'Group Chat' : getSenderFull(user, selectedChat.participants)?.email}</p>
+                <p className="text-sm text-on-surface-variant">{selectedChat.isGroupChat ? 'Group Chat' : 'Direct Message'}</p>
               </div>
 
               <div className="p-4 border-b border-outline-variant/10">
